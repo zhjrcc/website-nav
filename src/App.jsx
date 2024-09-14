@@ -1,28 +1,21 @@
 import Menu from "./Menu"
 import "./style.css"
-import Context from "./Context"
+import { DataProvider } from "./Context"
+import MainBody from "./MainBody"
 
 function App() {
-  const links = [
-    { title: "Home", href: "/", icon: "home" },
-    { title: "Services", href: "/services", icon: "services" },
-    { title: "Pricing", href: "/pricing", icon: "pricing" },
-    { title: "Blog", href: "/blog", icon: "blog" },
-  ]
   return (
-    <Context.Provider value={links}>
+    <DataProvider>
       <header>
         <Menu />
       </header>
-      <main>
-        <h1>Welcome to this website</h1>
-      </main>
+      <MainBody />
       <footer>
         <a href="#">About</a>
         <a href="#">Contact</a>
         <a href="#">React Quickly 2E</a>
       </footer>
-    </Context.Provider>
+    </DataProvider>
   )
 }
 
