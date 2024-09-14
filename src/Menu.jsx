@@ -1,24 +1,22 @@
 import MenuItem from "./MenuItem"
+import PropTypes from "prop-types"
 
-function Menu() {
+function Menu({ links }) {
   return (
     <nav>
       <ul className="menu">
-        <MenuItem href="#" icon="home">
-          Home
-        </MenuItem>
-        <MenuItem href="#" icon="services">
-          Services
-        </MenuItem>
-        <MenuItem href="#" icon="pricing">
-          Pricing
-        </MenuItem>
-        <MenuItem href="#" icon="blog">
-          Blog
-        </MenuItem>
+        {links.map(({ title, ...props }) => (
+          <MenuItem key={title} {...props}>
+            {title}
+          </MenuItem>
+        ))}
       </ul>
     </nav>
   )
+}
+
+Menu.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Menu
