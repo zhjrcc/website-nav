@@ -1,0 +1,56 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main,
+header,
+footer {
+  padding: 8px;
+}
+
+header {
+  border-bottom: 1px solid darkgray;
+  background: #eee;
+}
+
+footer {
+  border-top: 1px solid darkgray;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1em;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: .3em;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid lightgray;
+  border-radius: .5em;
+}
+
+.menu-link:hover {
+  background:lightgray;
+}
