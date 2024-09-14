@@ -1,7 +1,9 @@
 import MenuItem from "./MenuItem"
-import PropTypes from "prop-types"
+import { useContext } from "react"
+import Context from "./Context"
 
-function Menu({ links }) {
+function Menu() {
+  const links = useContext(Context)
   return (
     <nav>
       <ul className="menu">
@@ -13,10 +15,6 @@ function Menu({ links }) {
       </ul>
     </nav>
   )
-}
-
-Menu.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Menu

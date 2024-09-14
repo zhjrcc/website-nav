@@ -1,5 +1,6 @@
 import Menu from "./Menu"
 import "./style.css"
+import Context from "./Context"
 
 function App() {
   const links = [
@@ -9,9 +10,9 @@ function App() {
     { title: "Blog", href: "/blog", icon: "blog" },
   ]
   return (
-    <>
+    <Context.Provider value={links}>
       <header>
-        <Menu links={links} />
+        <Menu />
       </header>
       <main>
         <h1>Welcome to this website</h1>
@@ -21,7 +22,7 @@ function App() {
         <a href="#">Contact</a>
         <a href="#">React Quickly 2E</a>
       </footer>
-    </>
+    </Context.Provider>
   )
 }
 
